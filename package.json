@@ -1,0 +1,32 @@
+{
+  "name": "movie-share",
+  "version": "0.0.1",
+  "description": "Simple page to discuss movies. Uses the themoviedb.org API for movie details and data. Users and Comments stored on separate server, accessed through API calls. Froent end React/Redux.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
+  },
+  "devDependencies": {
+    "babel-core": "^6.2.1",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-react": "^6.1.18",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "dependencies": {
+    "axios": "^0.9.1",
+    "babel-preset-stage-1": "^6.1.18",
+    "lodash": "^3.10.1",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-redux": "^4.0.0",
+    "react-router": "^2.0.0-rc5",
+    "redux": "^3.0.4",
+    "redux-form": "^4.1.3",
+    "redux-promise": "^0.5.1"
+  },
+  "author": "Ed Petner",
+  "license": "ISC"
+}

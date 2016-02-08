@@ -1,0 +1,12 @@
+.list-width {
+  width: 40%;
+}
+
+.movie-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 45%;
+  background: rgba(81,66,59, 1);
+  min-height: 1000px;
+}
