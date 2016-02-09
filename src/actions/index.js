@@ -12,8 +12,8 @@ export const FETCH_CAST = 'FETCH_CAST';
 export const FETCH_BACKGROUND = 'FETCH_BACKGROUND';
 
 export function fetchMovies() {
-  console.log("fetchmovies");
   const request = axios.get(`${ROOT_URL}/discover/movie${API_KEY}&sort_by=popularity.desc`);
+
   return {
     type: FETCH_MOVIES,
     payload: request

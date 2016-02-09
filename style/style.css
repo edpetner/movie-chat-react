@@ -1,6 +1,13 @@
 .list-width {
-  background: rgba(81,66,59, 1);
+  background: white;
+  padding: 5px;
   width: 40%;
+  height: 10em;
+  overflow: scroll;
+}
+
+i {
+  color: grey;
 }
 
 .movie-container {
@@ -18,6 +25,11 @@
   padding: 15px;
   background-color: white;
   color: black;
+}
+
+.poster-image {
+  max-height: 400px;
+  float: right;
 }
 
 #big-container {

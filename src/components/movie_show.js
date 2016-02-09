@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { fetchMovie, fetchCast, fetchBackground } from '../actions/index';
 import { Link } from 'react-router';
 
 
 export default class MovieShow extends Component {
-  // static contextTypes = {
-  //   router: PropTypes.object
-  // };
+  static contextTypes = {
+    router: PropTypes.object
+  };
 
   componentWillMount() {
     const movie_id = this.props.params.id;
@@ -16,13 +16,14 @@ export default class MovieShow extends Component {
     this.props.fetchBackground(movie_id);
   }
 
-  renderCast(actors) {
-    return actors.cast.map((actor, index) => {
-      if (index > 5) {
-        return '';
-      }
+  renderCast(actors, title) {
+    return actors.cast.map((actor) => {
       return (
-        <li className="list-group-item" key={actor.name}>{actor.name}</li>
+
+        <li key={actor.name} className="list-group-item">
+          <i>{actor.character}  </i>
+          <a href={"https://www.google.com/search?q=site:imdb.com+" + actor.name + "&btnI"}>{actor.name}</a>
+        </li>
       );
     });
   }
@@ -50,14 +51,13 @@ export default class MovieShow extends Component {
       <div className="movie-container">
         <div className="alert alert-danger">
           <Link to="/">Return to home</Link>
-        <h1>{movie.original_title}</h1><small>{this.renderGenres(movie.genres)}</small>
+          <h1>{movie.original_title}</h1><small>{this.renderGenres(movie.genres)}</small>
+          <img className="poster-image" src={"https://image.tmdb.org/t/p/w396" + movie.poster_path} />
         </div>
           <div className="list-width">
+            <h5>Top Billed Cast</h5>
             <ul className="list-group">
-              <li className="list-group-item">
-                <h5>Top Billed Cast</h5>
-              </li>
-            {this.renderCast(cast)}
+            {this.renderCast(cast, movie.original_title)}
             </ul>
           </div>
           <div className="movie-details">
@@ -72,5 +72,5 @@ export default class MovieShow extends Component {
 function mapStateToProps(state) {
   return { movie: state.movies.movie, cast: state.movies.cast, background: state.movies.background };
 }
-
+// , fetchCast, fetchBackground
 export default connect(mapStateToProps, { fetchMovie, fetchCast, fetchBackground })(MovieShow);
