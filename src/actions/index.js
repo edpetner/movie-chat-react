@@ -10,9 +10,20 @@ export const FETCH_MOVIES = 'FETCH_MOVIES';
 export const FETCH_MOVIE = 'FETCH_MOVIE';
 export const FETCH_CAST = 'FETCH_CAST';
 export const FETCH_BACKGROUND = 'FETCH_BACKGROUND';
+export const FETCH_ACTOR_MOVIES = 'FETCH_ACTOR_MOVIES';
 
-export function fetchMovies() {
+export function fetchByActor(props = "Pitt") {
+  const request = axios.get(`${ROOT_URL}/search/person${API_KEY}&query=${props}`);
+
+  return {
+    type: FETCH_ACTOR_MOVIES,
+    payload: request
+  };
+}
+
+export function fetchMovies(by_ref, ref) {
   const request = axios.get(`${ROOT_URL}/discover/movie${API_KEY}&sort_by=popularity.desc`);
+
 
   return {
     type: FETCH_MOVIES,
