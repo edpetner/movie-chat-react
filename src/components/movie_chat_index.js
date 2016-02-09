@@ -26,6 +26,7 @@ class MovieChatIndex extends Component {
     if (!this.props.movies){
       return <h3>Loading</h3>;
     }
+    document.body.style.background = "#FFF";
     return (
       <div>
         <h3>Movies</h3>

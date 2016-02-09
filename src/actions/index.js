@@ -9,6 +9,7 @@ const IMAGE_ROOT = 'https://image.tmdb.org/t/p/w396'
 export const FETCH_MOVIES = 'FETCH_MOVIES';
 export const FETCH_MOVIE = 'FETCH_MOVIE';
 export const FETCH_CAST = 'FETCH_CAST';
+export const FETCH_BACKGROUND = 'FETCH_BACKGROUND';
 
 export function fetchMovies() {
   console.log("fetchmovies");
@@ -33,6 +34,15 @@ export function fetchCast(props) {
 
   return {
     type: FETCH_CAST,
+    payload: request
+  }
+}
+
+export function fetchBackground(props) {
+  const request = axios.get(`${ROOT_URL}/movie/${props}/images${API_KEY}`);
+
+  return {
+    type: FETCH_BACKGROUND,
     payload: request
   }
 }

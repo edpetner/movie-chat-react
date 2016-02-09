@@ -1,4 +1,5 @@
 .list-width {
+  background: rgba(81,66,59, 1);
   width: 40%;
 }
 
@@ -7,6 +8,30 @@
   left: 0;
   top: 0;
   width: 45%;
-  background: rgba(81,66,59, 1);
+  background: rgba(81,66,59, .5);
   min-height: 1000px;
+}
+
+.movie-details {
+  width: 100%;
+  min-height: 250px;
+  padding: 15px;
+  background-color: white;
+  color: black;
+}
+
+#big-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-width: 1000px;
+  min-height: 1000px;
+  background-size: cover;
+  filter: blur(7px);
+  -webkit-filter: blur(7px);
+  -moz-filter: blur(7px);
+  -o-filter: blur(7px);
+  -ms-filter: blur(7px);
 }
